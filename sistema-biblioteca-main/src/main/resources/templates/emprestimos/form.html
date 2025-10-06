@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Novo Empréstimo</title>
+</head>
+<body>
+
+<!-- Menu -->
+<div th:insert="fragments/header :: header"></div>
+
+<h1>Novo Empréstimo</h1>
+
+<form th:action="@{/emprestimos/salvar}" th:object="${emprestimo}" method="post">
+
+    <!-- Seleciona o usuário -->
+    <label>Usuário:</label>
+    <select th:field="*{usuario.id}">
+        <option value="">-- selecione --</option>
+        <option th:each="u : ${usuarios}"
+                th:value="${u.id}"
+                th:text="${u.nome}">
+        </option>
+    </select>
+    <br/>
+
+    <!-- Seleciona o livro -->
+    <label>Livro:</label>
+    <select th:field="*{livro.id}">
+        <option value="">-- selecione --</option>
+        <option th:each="l : ${livros}"
+                th:value="${l.id}"
+                th:text="${l.titulo}">
+        </option>
+    </select>
+    <br/>
+
+    <!-- Data de retirada -->
+    <label>Data Retirada:</label>
+    <input type="date" th:field="*{dataRetirada}" />
+    <br/>
+
+    <!-- Data prevista de devolução -->
+    <label>Data Prevista Devolução:</label>
+    <input type="date" th:field="*{dataPrevistaDevolucao}" />
+    <div th:if="${#fields.hasErrors('dataPrevistaDevolucao')}"
+         th:errors="*{dataPrevistaDevolucao}"></div>
+    <br/>
+
+    <button type="submit">Salvar</button>
+</form>
+
+</body>
+</html>
