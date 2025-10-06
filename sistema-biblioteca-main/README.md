@@ -1,11 +1,13 @@
-# 📚 Sistema de Biblioteca - Spring Boot
+Sistema de Biblioteca - Spring Boot
 
-## 🎯 Descrição
+Feito por ENZO VINYCIUS DA SILVA DIAS
+
+Descrição
 Sistema completo de gerenciamento de biblioteca desenvolvido em Java com Spring Boot para controle de livros, usuários e empréstimos.
 
 ## 🚀 Como Executar
 
-### Pré-requisitos
+##Pré-requisitos
 - Java 17
 - Maven
 
@@ -14,4 +16,4 @@ Sistema completo de gerenciamento de biblioteca desenvolvido em Java com Spring 
 ./mvnw clean spring-boot:run
 
 
-ENZO VINYCIUS DA SILVA DIAS
+
